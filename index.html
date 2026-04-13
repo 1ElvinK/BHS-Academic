@@ -61,7 +61,7 @@
 
 <div class="container">
     <div id="view-login">
-        <h2>Portal Access</h2>
+        <h2>Welcome to BHS</h2>
         <input type="password" id="pass-input" placeholder="Enter Access Code">
         <button onclick="checkPass()">Login</button>
     </div>
@@ -90,22 +90,26 @@
 
     <div id="view-resources" class="hidden">
         <h2>Weekly Learning Resources</h2>
+        
+        <button class="back-btn" onclick="showView('dash')"style="margin-bottom: 20px;">Back to Dashboard</button>
 
         <div class="weekly-update">
-            <h3 style="color: var(--accent);">Week 2: Thermodynamics</h3>
+            <h3 style="color: var(--accent);">Session 2 (17 April)</h3>
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/GMbuuwnnWfo" frameborder="0" allowfullscreen></iframe>
             </div>
 
             <div class="quiz-card">
-                <p>1. Which law describes energy conservation?</p>
+                <p>1. How can I apply the recency and primacy effect to my teaching?</p>
                 <div class="quiz-options">
                     <input type="radio" name="q-w2" id="w2-optA">
-                    <label for="w2-optA">Second Law</label>
+                    <label for="w2-optA">Teach the important concepts in the middle of class</label>
 
                     <input type="radio" name="q-w2" id="w2-correct">
-                    <label for="w2-correct">First Law</label> <input type="radio" name="q-w2" id="w2-optC">
-                    <label for="w2-optC">Third Law</label>
+                    <label for="w2-correct">Before every class, help my student recall what was taught the previous week</label> 
+                    
+                    <input type="radio" name="q-w2" id="w2-optC">
+                    <label for="w2-optC">Prime my students by asking a simple question</label>
                 </div>
                 <button onclick="checkQuiz('w2-correct', 'w2-msg')">Check Answer</button>
                 <p id="w2-msg" style="text-align:center; font-weight:bold;"></p>
@@ -114,26 +118,27 @@
         <hr>
 
         <div class="weekly-update old-week">
-            <h3>Week 1: Introduction to Mechanics</h3>
+            <h3>Session 1 (10 April)</h3>
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/V4qk9fnksMI" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="quiz-card">
-                <p>1. What is Force equal to?</p>
+                <p>1. WHich of the following is true about the recency and primacy effect?</p>
                 <div class="quiz-options">
                     <input type="radio" name="q-w1" id="w1-correct">
-                    <label for="w1-correct">Mass x Acceleration</label> <input type="radio" name="q-w1" id="w1-optB">
-                    <label for="w1-optB">Velocity / Time</label>
+                    <label for="w1-correct">We remember information presented at the beginning and end of a presentation</label> 
+                    
+                    <input type="radio" name="q-w1" id="w1-optB">
+                    <label for="w1-optB">We remember information presented in the middle as it is less susceptible to interference</label>
 
                     <input type="radio" name="q-w1" id="w1-optC">
-                    <label for="for-w1-optC">Weight + Gravity</label>
+                    <label for="for-w1-optC">We forget information presented at the front and end of presentations.</label>
                 </div>
                 <button onclick="checkQuiz('w1-correct', 'w1-msg')">Check Answer</button>
                 <p id="w1-msg" style="text-align:center; font-weight:bold;"></p>
             </div>
         </div>
 
-        <button class="back-btn" onclick="showView('dash')">Back to Dashboard</button>
     </div>
 </div>
 
