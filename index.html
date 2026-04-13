@@ -9,14 +9,49 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding: 20px; display: flex; justify-content: center; }
         .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 550px; }
         .hidden { display: none; }
-        h2 { margin-top: 0; color: var(--primary); border-bottom: 2px solid var(--bg); padding-bottom: 10px; }
-        input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
-        button { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+        h2 { margin-top: 0; color: var(--primary); border-bottom: 2px solid var(--bg); padding-bottom: 10px; text-align: center; }
+        input[type="password"], select, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
+        
+        /* Main Buttons */
+        button { width: 100%; padding: 14px; background: var(--accent); color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px; font-weight: bold; }
         button:hover { background: #2980b9; }
         .back-btn { background: #95a5a6; margin-top: 20px; }
+
+        /* Video Styling */
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; margin: 15px 0; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px; }
-        .quiz-card { background: #ebf5fb; padding: 15px; border-radius: 8px; margin-top: 15px; }
+
+        /* Quiz Card & SQUARE BUTTONS */
+        .quiz-card { background: #ebf5fb; padding: 20px; border-radius: 10px; margin-top: 15px; border: 1px solid #d1e9f9; }
+        .quiz-options { display: flex; flex-direction: column; gap: 10px; margin: 15px 0; }
+        
+        /* Hide the actual radio circle */
+        .quiz-options input[type="radio"] { display: none; }
+
+        /* Make the label look like a square button */
+        .quiz-options label {
+            display: block;
+            padding: 15px;
+            background: #ffffff;
+            border: 2px solid #d1d8e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* The "Depressed" / Pressed state */
+        .quiz-options input[type="radio"]:checked + label {
+            background-color: var(--accent);
+            color: white;
+            border-color: #2980b9;
+            transform: scale(0.97); /* Sinks the button slightly */
+            box-shadow: inset 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .quiz-options label:hover { background: #f0faff; border-color: var(--accent); }
+
         .weekly-update { margin-bottom: 50px; padding-bottom: 20px; }
         .old-week { opacity: 0.7; border-top: 2px dashed #eee; padding-top: 20px; }
         hr { border: none; border-top: 2px dashed #ccc; margin: 40px 0; }
@@ -57,17 +92,24 @@
         <h2>Weekly Learning Resources</h2>
 
         <div class="weekly-update">
-            <h3 style="color: var(--accent);">Week 2: Thermodynamics</h3> <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/NEW_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            <h3 style="color: var(--accent);">Week 2: Thermodynamics</h3>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
             </div>
 
             <div class="quiz-card">
-                <p>1. Which law describes energy conservation?</p> <label><input type="radio" name="q-w2" id="w2-correct"> A) First Law</label><br> <label><input type="radio" name="q-w2"> B) Second Law</label><br>
-                
-                <label><input type="radio" name="q-w2"> C) Third Law</label><br>
+                <p>1. Which law describes energy conservation?</p>
+                <div class="quiz-options">
+                    <input type="radio" name="q-w2" id="w2-optA">
+                    <label for="w2-optA">Second Law</label>
 
+                    <input type="radio" name="q-w2" id="w2-correct">
+                    <label for="w2-correct">First Law</label> <input type="radio" name="q-w2" id="w2-optC">
+                    <label for="w2-optC">Third Law</label>
+                </div>
                 <button onclick="checkQuiz('w2-correct', 'w2-msg')">Check Answer</button>
-                <p id="w2-msg"></p> </div>
+                <p id="w2-msg" style="text-align:center; font-weight:bold;"></p>
+            </div>
         </div>
         <hr>
 
@@ -78,11 +120,16 @@
             </div>
             <div class="quiz-card">
                 <p>1. What is Force equal to?</p>
-                <label><input type="radio" name="q-w1" id="w1-correct"> A) Mass x Acceleration</label><br>
-                <label><input type="radio" name="q-w1"> B) Velocity / Time</label><br>
-                <label><input type="radio" name="q-w1"> C) Weight + Gravity</label><br>
+                <div class="quiz-options">
+                    <input type="radio" name="q-w1" id="w1-correct">
+                    <label for="w1-correct">Mass x Acceleration</label> <input type="radio" name="q-w1" id="w1-optB">
+                    <label for="w1-optB">Velocity / Time</label>
+
+                    <input type="radio" name="q-w1" id="w1-optC">
+                    <label for="for-w1-optC">Weight + Gravity</label>
+                </div>
                 <button onclick="checkQuiz('w1-correct', 'w1-msg')">Check Answer</button>
-                <p id="w1-msg"></p>
+                <p id="w1-msg" style="text-align:center; font-weight:bold;"></p>
             </div>
         </div>
 
@@ -91,13 +138,12 @@
 </div>
 
 <script>
-    // --- MAIN CONFIGURATION ---
+    // --- EDIT THESE TWO LINES ---
     const CONFIG = {
-        PASS: "Klinik26", // EDIT: Change this to your desired access code
-        API: "https://script.google.com/macros/s/AKfycby900oDZ8GWzQAp9gRwZzJm8ZjFgs4efBW_3Q-Ca0SQgwwfoS4qT0tOwea-CsLXMJ4/exec" // EDIT: Paste your Google Web App URL here
+        PASS: "klinik26", 
+        API: "https://script.google.com/macros/s/AKfycby900oDZ8GWzQAp9gRwZzJm8ZjFgs4efBW_3Q-Ca0SQgwwfoS4qT0tOwea-CsLXMJ4/exec" 
     };
 
-    // 1. Password Logic
     function checkPass() {
         if (document.getElementById('pass-input').value === CONFIG.PASS) {
             showView('dash');
@@ -105,13 +151,11 @@
         } else { alert("Incorrect code."); }
     }
 
-    // 2. Navigation Logic
     function showView(id) {
         document.querySelectorAll('body > .container > div').forEach(div => div.classList.add('hidden'));
         document.getElementById('view-' + id).classList.remove('hidden');
     }
 
-    // 3. Fetch Mentor/Student Names from Google Sheet
     async function fetchNames() {
         try {
             const res = await fetch(CONFIG.API);
@@ -121,13 +165,11 @@
         } catch (e) { console.error("Could not load names."); }
     }
 
-    // 4. Form Submission Logic
     document.getElementById('attendance-form').onsubmit = async (e) => {
         e.preventDefault();
         const btn = document.getElementById('submit-btn');
         btn.innerText = "Sending...";
         const data = Object.fromEntries(new FormData(e.target));
-        
         try {
             await fetch(CONFIG.API, { method: 'POST', body: JSON.stringify(data) });
             alert("Attendance Recorded!");
@@ -137,7 +179,6 @@
         btn.innerText = "Submit to Google Sheets";
     };
 
-    // 5. Quiz Logic (Universal)
     function checkQuiz(correctId, msgId) {
         const isCorrect = document.getElementById(correctId).checked;
         const msg = document.getElementById(msgId);
@@ -145,6 +186,5 @@
         msg.style.color = isCorrect ? "green" : "red";
     }
 </script>
-
 </body>
 </html>
