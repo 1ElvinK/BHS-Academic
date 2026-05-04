@@ -94,6 +94,48 @@
         <button class="back-btn" onclick="showView('dash')"style="margin-bottom: 20px;">Back to Dashboard</button>
 
         <div class="weekly-update">
+            <h3 style="color: var(--accent);">Session 4 (8 May)</h3>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/mqV55alm4PY" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="quiz-card">
+                <p>1. Many of the slower learners are said to be at the concrete operational stage of cognitive development. Which of the following do learners in this stage struggle with?</p>
+                <div class="quiz-options">
+                    <input type="radio" name="q-w2" id="w2-optA">
+                    <label for="w2-optA">Logical Reasoning</label>
+
+                    <input type="radio" name="q-w2" id="w2-optB">
+                    <label for="w2-optB">Concrete Reasoning</label> 
+                    
+                    <input type="radio" name="q-w2" id="w2-correct">
+                    <label for="w2-correct">Abstract Reasoning</label>
+                </div>
+                <button onclick="checkQuiz('w2-correct', 'w2-msg')">Check Answer</button>
+                <p id="w2-msg" style="text-align:center; font-weight:bold;"></p>
+
+                <p>2. Which of the following should be avoiding if we want to help students from the concrete operational stage to learn?</p>
+                <div class="quiz-options">
+                    <input type="radio" name="q-w2" id="w2-optA">
+                    <label for="w2-optA">Make thinking visible and tangible </label>
+
+                    <input type="radio" name="q-w2" id="w2-optB">
+                    <label for="w2-optB">Connect to real life situations</label> 
+                    
+                    <input type="radio" name="q-w2" id="w2-correct">
+                    <label for="w2-correct">Mainly verbal explanation</label>
+
+                    <input type="radio" name="q-w2" id="w2-optD">
+                    <label for="w2-optD">Use real-world objects</label>
+                </div>
+                <button onclick="checkQuiz('w2-correct', 'w2-msg')">Check Answer</button>
+                <p id="w2-msg" style="text-align:center; font-weight:bold;"></p>
+
+            </div>
+        </div>
+        <hr>
+
+        <div class="weekly-update old-week">
             <h3 style="color: var(--accent);">Session 2 (17 April)</h3>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/GMbuuwnnWfo" frameborder="0" allowfullscreen></iframe>
